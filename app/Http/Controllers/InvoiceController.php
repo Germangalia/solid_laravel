@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Invoices;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -11,16 +12,19 @@ class InvoiceController extends Controller
 {
     //
     public function index() {
+
         //Comprovar qui pot executar i qui no.
         if(Auth::check()) {
             return 'Forbidden!';
         }
 
+        $invoiceRepo = new InvoiceRepository();
+
         //Retornar totes les factures de al base de dades.
         $database_invoices = $this->getAllInvoicesFromDatabase();
 
         //Donar format a les factures.
-        $invoices = $this->format($database_invoices);
+        $invoices = $this->transform($database_invoices);
 
         //Retorna la vista.
         return view('invoices', compact('invoices'));
@@ -29,7 +33,10 @@ class InvoiceController extends Controller
 //        return view('invoices', $data);
     }
 
-    public function getAllInvoicesFromDatabase(){
 
+
+    private function transform($database_invoice){
+
+        return $database_invoice;
     }
 }
