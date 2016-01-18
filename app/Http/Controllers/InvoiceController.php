@@ -3,14 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Invoices;
+use App\Repositories\InvoicesRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class InvoiceController extends Controller
 {
     //
+    /**
+     * InvoiceController constructor.
+     */
+    public function __construct(InvoicesRepository $invoicesRepo)
+    {
+        $this->invoiceRepo = $invoicesRepo;
+    }
+
     public function index() {
 
         //Comprovar qui pot executar i qui no.
@@ -18,10 +28,8 @@ class InvoiceController extends Controller
             return 'Forbidden!';
         }
 
-        $invoiceRepo = new InvoiceRepository();
-
         //Retornar totes les factures de al base de dades.
-        $database_invoices = $this->getAllInvoicesFromDatabase();
+        $database_invoices = $this->invoiceRepo->getAllInvoicesFromDatabase();
 
         //Donar format a les factures.
         $invoices = $this->transform($database_invoices);
