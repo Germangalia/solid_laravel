@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Invoices;
 use App\Repositories\InvoiceRepository;
+use App\Repositories\RepositoryInterface;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -12,24 +13,25 @@ use Illuminate\Support\Facades\Auth;
 
 class InvoiceController extends Controller
 {
+    protected $repo;
     //
     /**
      * InvoiceController constructor.
      */
-    public function __construct(InvoiceRepository $invoicesRepo)
+    public function __construct(RepositoryInterface $repo)
     {
-        $this->invoiceRepo = $invoicesRepo;
+        $this->repo = $repo;
     }
 
     public function index() {
 
-        //Comprovar qui pot executar i qui no.
-        if(Auth::check()) {
-            return 'Forbidden!';
-        }
+//        //Comprovar qui pot executar i qui no.
+//        if(Auth::check()) {
+//            return 'Forbidden!';
+//        }
 
         //Retornar totes les factures de al base de dades.
-        $database_invoices = $this->invoiceRepo->all();
+        $database_invoices = $this->repo->all();
 
         //Donar format a les factures.
         $invoices = $this->transform($database_invoices);

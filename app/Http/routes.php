@@ -29,7 +29,9 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     //
-    Route::get('/invoice', 'InvoiceController@index');
+    Route::get('/invoice',[
+        'middleware' => 'auth',
+    'uses'=>'InvoiceController@index']);
 });
 
 Route::group(['middleware' => 'web'], function () {
