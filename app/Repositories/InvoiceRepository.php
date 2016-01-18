@@ -9,10 +9,10 @@ use App\Invoices;
  * Date: 18/01/16
  * Time: 18:01
  */
-class InvoicesRepository
+class InvoiceRepository
 {
 
-    public function getAllInvoicesFromDatabase(){
+    public function all(){
 
         return Invoices::all();
     }

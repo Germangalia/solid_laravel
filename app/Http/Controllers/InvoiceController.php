@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Invoices;
-use App\Repositories\InvoicesRepository;
+use App\Repositories\InvoiceRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +16,7 @@ class InvoiceController extends Controller
     /**
      * InvoiceController constructor.
      */
-    public function __construct(InvoicesRepository $invoicesRepo)
+    public function __construct(InvoiceRepository $invoicesRepo)
     {
         $this->invoiceRepo = $invoicesRepo;
     }
@@ -29,7 +29,7 @@ class InvoiceController extends Controller
         }
 
         //Retornar totes les factures de al base de dades.
-        $database_invoices = $this->invoiceRepo->getAllInvoicesFromDatabase();
+        $database_invoices = $this->invoiceRepo->all();
 
         //Donar format a les factures.
         $invoices = $this->transform($database_invoices);

@@ -27,7 +27,7 @@ Route::get('/', function () {
 */
 
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['web']], function () {
     //
     Route::get('/invoice', 'InvoiceController@index');
 });
