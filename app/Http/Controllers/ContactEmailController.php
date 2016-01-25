@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Flash;
 use Illuminate\Support\Facades\Input;
 
 class ContactEmailController extends Controller
@@ -26,7 +27,10 @@ class ContactEmailController extends Controller
 //          'notification',
 //            'All ok!'
 //        );
-        Flash::('Ok!');
+//        Flash::message('Ok!');
+
+        $flash = app('\App\Http\Flash');
+        $flash->message("ok");
 
         //REDIRECT WELLCOME
 

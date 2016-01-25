@@ -292,6 +292,13 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 </script>
 <script>js/all.js</script>
 <!-- Sweet Alert -->
-<script>swal("Good job!", "You clicked the button!", "success")</script>
+<script>
+//    swal("Good job!", "You clicked the button!", "success")
+    swal({
+        title: "Good Job!",
+        text: "You clicked the button!",
+
+    })
+</script>
 </body>
 </html>

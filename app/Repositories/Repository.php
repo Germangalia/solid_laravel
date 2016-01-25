@@ -24,7 +24,7 @@ abstract class Repository implements RepositoryInterface
             throw new Exception;
         }
         return $model;
-    }6
+    }
     /**
      * @param array $columns
      * @return mixed
