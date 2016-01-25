@@ -10,6 +10,9 @@ namespace App\Repositories;
 
 
 
+use Exception;
+use Illuminate\Support\Facades\App;
+
 abstract class Repository implements RepositoryInterface
 {
 
@@ -48,7 +51,7 @@ abstract class Repository implements RepositoryInterface
      */
     public function all()
     {
-        return $this->model::all();
+        return $this->model->all();
     }
 
     /**
