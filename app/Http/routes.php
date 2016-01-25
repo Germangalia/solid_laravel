@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', ['as' => 'welcome'], function () {
     return view('welcome');
 });
 
@@ -39,6 +39,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+
+    Route::post('sendContactEmail', 'ContactEmailController@send');
 });
 
 

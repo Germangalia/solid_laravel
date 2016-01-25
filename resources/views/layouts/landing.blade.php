@@ -23,6 +23,10 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <script src="{{ asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
     <script src="{{ asset('/js/smoothscroll.js') }}"></script>
 
+    <!-- Sweet Alert -->
+    <script src="dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+
 
 </head>
 
@@ -240,8 +244,10 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
         <div class="col-lg-7">
             <h3>Drop Us A Line</h3>
+            {{Session::get('notification')}}
             <br>
-            <form role="form" action="#" method="post" enctype="plain">
+            <form role="form" action="/sendContactEmail" method="post" enctype="plain">
+                {{csrf_field()}}
                 <div class="form-group">
                     <label for="name1">Your Name</label>
                     <input type="name" name="Name" class="form-control" id="name1" placeholder="Your Name">
@@ -284,5 +290,8 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
         interval: 3500
     })
 </script>
+<script>js/all.js</script>
+<!-- Sweet Alert -->
+<script>swal("Good job!", "You clicked the button!", "success")</script>
 </body>
 </html>
