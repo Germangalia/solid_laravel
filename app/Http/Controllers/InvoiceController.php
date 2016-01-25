@@ -18,8 +18,10 @@ class InvoiceController extends Controller
     //
     /**
      * InvoiceController constructor.
+     *
+     * DEPENDENCE INJECTION
      */
-    public function __construct(UserRepository $repo)
+    public function __construct(RepositoryInterface $repo)
     {
         $this->repo = $repo;
     }

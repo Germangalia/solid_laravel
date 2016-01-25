@@ -27,6 +27,9 @@ Route::get('/', function () {
 */
 
 
+App::bind(App\Repositories\RepositoryInterface::class, App\Repositories\InvoiceRepository::class);
+
+
 Route::group(['middleware' => ['web']], function () {
     //
     Route::get('/invoices',[
