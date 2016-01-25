@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Invoices;
 use App\Repositories\InvoiceRepository;
 use App\Repositories\RepositoryInterface;
+use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -18,7 +19,7 @@ class InvoiceController extends Controller
     /**
      * InvoiceController constructor.
      */
-    public function __construct(RepositoryInterface $repo)
+    public function __construct(UserRepository $repo)
     {
         $this->repo = $repo;
     }
