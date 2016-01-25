@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Flash;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 class ContactEmailController extends Controller
@@ -23,14 +24,16 @@ class ContactEmailController extends Controller
         //TODO send email
 
         //FLASH NOTIFICATION
-//        $request->session()->flash(
-//          'notification',
-//            'All ok!'
-//        );
+        $request->session()->flash(
+          'flash_message',
+            'Email sent!'
+        );
 //        Flash::message('Ok!');
 
-        $flash = app('\App\Http\Flash');
-        $flash->message("ok");
+//        $flash = app('\App\Http\Flash');
+//        $flash->message("send message!");
+
+
 
         //REDIRECT WELLCOME
 
