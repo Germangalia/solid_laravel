@@ -40,6 +40,10 @@
                     <ul class="treeview-menu">
                         <li><a href="#">Link in level 2</a></li>
                         <li><a href="#">Link in level 2</a></li>
+                        <li><a href="#">Apartat 1</a></li>
+                        <li><a href="#">Apartat 2</a></li>
+                        <li><a href="#">Apartat 3</a></li>
+
                     </ul>
                 </li>
             </ul><!-- /.sidebar-menu -->
