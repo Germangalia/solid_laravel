@@ -53,8 +53,6 @@ desired effect
 </div><!-- ./wrapper -->
 
 @include('layouts.partials.scripts')
-<script>
-    $(document).pjax('a', '#pjax-container')
-</script>
+
 </body>
 </html>

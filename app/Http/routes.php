@@ -30,7 +30,7 @@ Route::get('/', ['as' => 'welcome'], function () {
 App::bind(App\Repositories\RepositoryInterface::class, App\Repositories\InvoiceRepository::class);
 
 
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web', 'pjax']], function () {
     //
     Route::get('/invoices',[
         'middleware' => 'auth',
