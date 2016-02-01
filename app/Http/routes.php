@@ -56,4 +56,4 @@ Route::group(['middleware' => ['web', 'pjax']], function () {
     });
 });
 
-
+include 'test-routes.php';
