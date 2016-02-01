@@ -18,11 +18,24 @@ class ContactEmailController extends Controller
 
 {
 
+    protected $user;
+
+    /**
+     * ContactEmailController constructor.
+     * @param $user
+     */
+    public function __construct($user)
+    {
+        $this->user = $user;
+    }
+
+
     public function send(Request $request){
 
 //        dd(Input::all());
 
         //TODO send email
+       $this->sendEmail();
 
 
         //FLASH NOTIFICATION
@@ -44,7 +57,10 @@ class ContactEmailController extends Controller
 
     public function sendEmail()
     {
-        $this->dispatch(new SendSubscriptionEmail());
+        $user = new User();
+        $user->email = germangalia@iesebre.com;
+        $this->dispatch(new SendSubscriptionEmail($user));
+        echo 'Done!';
     }
 
 }
