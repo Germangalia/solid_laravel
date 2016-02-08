@@ -1,23 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ggalia84
- * Date: 25/01/16
- * Time: 18:22
- */
 
 namespace App\Http\Controllers;
-
 
 use App\Http\Flash;
 use App\Jobs\SendSubscriptionEmail;
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 
 class ContactEmailController extends Controller
-
 {
-
     protected $user;
 
     /**
@@ -30,37 +24,32 @@ class ContactEmailController extends Controller
     }
 
 
-    public function send(Request $request){
+    public function send(Request $request)
+    {
+        //dd(Input::all());
 
-//        dd(Input::all());
-
-        //TODO send email
-       $this->sendEmail();
-
+        //TODO: SEND EMAIL
+        //this->email->send();
+        $this->sendEmail();
 
         //FLASH NOTIFICATION
         $request->session()->flash(
-          'flash_message',
-            'Email sent!'
+            'flash_message',
+            'Sent email correctly!'
         );
-//        Flash::message('Ok!');
 
 //        $flash = app('\App\Http\Flash');
-//        $flash->message("send message!");
+//
+//        $flash->message("Ok!");
 
-
-
-        //REDIRECT WELLCOME
-
+        //REDIRECT WELCOME
         return redirect()->route('welcome');
     }
 
     public function sendEmail()
     {
-        $user = new User();
-        $user->email = germangalia@iesebre.com;
-        $this->dispatch(new SendSubscriptionEmail($user));
+        $this->user->email = "adamalvarado@iesebre.com";
+        $this->dispatch(new SendSubscriptionEmail($this->user));
         echo 'Done!';
     }
-
 }

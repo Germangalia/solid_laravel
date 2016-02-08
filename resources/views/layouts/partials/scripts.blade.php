@@ -6,8 +6,9 @@
 <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/js/app.min.js') }}" type="text/javascript"></script>
-
-
+<!-- All js -->
+<script src="js/all.js"></script>
+<!-- PJAX container -->
 <script>
     $(document).pjax('a', '#pjax-container')
 </script>

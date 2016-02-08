@@ -6,6 +6,7 @@ use App\Jobs\Job;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Mail;
 
 class SendSubscriptionEmail extends Job implements ShouldQueue
 {
@@ -13,14 +14,14 @@ class SendSubscriptionEmail extends Job implements ShouldQueue
     protected $user;
 
     /**
-     * SendSubscriptionEmail constructor.
-     * @param $user
+     * Create a new job instance.
+     *
+     * @return void
      */
-    public function __construct($user)
+    public function __construct(User $user)
     {
         $this->user = $user;
     }
-
 
     /**
      * Execute the job.
@@ -29,10 +30,12 @@ class SendSubscriptionEmail extends Job implements ShouldQueue
      */
     public function handle()
     {
+        //sleep(10);
+        //TODO Send email
         Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
-            $m->from('no-replay@myapp.com', 'My App');
+            $m->from('no-reply@myapp.com', 'My App');
 
-            $m->to($this->user->email)->subject('Welcome!');
+            $m->to($this->user->email)->subject('Your Reminder!');
         });
     }
 }

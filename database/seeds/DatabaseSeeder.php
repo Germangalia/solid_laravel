@@ -1,5 +1,6 @@
 <?php
 
+use App\Invoices;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,24 +15,20 @@ class DatabaseSeeder extends Seeder
         // $this->call(UserTableSeeder::class);
 
         $faker = Faker\Factory::create();
+
         $this->seedInvoices($faker);
 
     }
 
-    /**
-     * @param Faker $faker
-     */
     private function seedInvoices($faker)
     {
-        foreach (range(0,100) as $number) {
+        foreach (range(0,100) as $item) {
 
-            $invoce = new \App\Invoices();
+            $invoices = new Invoices();
 
-            $invoce->name = $faker->sentence;
-            $invoce->totalAmmount = $faker->randomNumber;
-
-            $invoce->save();
-
+            $invoices->name = $faker->sentence();
+            $invoices->totalAmmount = $faker->randomNumber();
+            $invoices->save();
         }
     }
 }

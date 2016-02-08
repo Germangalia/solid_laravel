@@ -16,37 +16,37 @@
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
-            @endif
+        @endif
 
-                    <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search..."/>
+        <!-- search form (Optional) -->
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search..."/>
               <span class="input-group-btn">
                 <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
-                </div>
-            </form>
-            <!-- /.search form -->
+            </div>
+        </form>
+        <!-- /.search form -->
 
-            <!-- Sidebar Menu -->
-            <ul class="sidebar-menu">
-                <li class="header">HEADER</li>
-                <!-- Optionally, you can add icons to the links -->
-                <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
-                <li><a href="{{url('invoices')}}"><i class='fa fa-link'></i> <span>Invoices</span></a></li>
-                <li class="treeview">
-                    <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-                    <ul class="treeview-menu">
-                        <li><a href="#">Link in level 2</a></li>
-                        <li><a href="#">Link in level 2</a></li>
-                        <li><a href="#">Apartat 1</a></li>
-                        <li><a href="#">Apartat 2</a></li>
-                        <li><a href="#">Apartat 3</a></li>
+        <!-- Sidebar Menu -->
+        <ul class="sidebar-menu">
+            <li class="header">HEADER</li>
+            <!-- Optionally, you can add icons to the links -->
+            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
+            <li><a href="{{url('invoices')}}"><i class='fa fa-link'></i> <span>Invoices</span></a></li>
+            <li class="treeview">
+            <li><a href="apartat1">Apartat 1</a></li>
+            <li><a href="apartat2">Apartat 2</a></li>
+            <li><a href="apartat3">Apartat 3</a></li>
 
-                    </ul>
-                </li>
-            </ul><!-- /.sidebar-menu -->
+                <li><a href="#"><i class='fa fa-link'></i> <span>Pricing Tables</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('mypricingtable') }}">My Pricing Tables</a></li>
+                    <li><a href="{{url('otherpricingtable')}}">Bootstrap</a></li>
+                </ul>
+            </li>
+        </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
 </aside>

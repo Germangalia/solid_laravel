@@ -1,12 +1,23 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: adam
+ * Date: 25/01/16
+ * Time: 16:42
+ */
 
 namespace App\Repositories;
+
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use Mockery\CountValidator\Exception;
+
 abstract class Repository implements RepositoryInterface
 {
+
     protected $model;
+
     /**
      * Repository constructor.
      * @param $model
@@ -15,16 +26,22 @@ abstract class Repository implements RepositoryInterface
     {
         $this->model = $this->makeModel();
     }
+
     abstract function model();
+
     public function makeModel()
     {
 //      $model = App:make($this->model());
+
         $model = App::make($this->model());
+
         if (!$model instanceof Model){
             throw new Exception;
         }
+
         return $model;
     }
+
     /**
      * @param array $columns
      * @return mixed
@@ -33,6 +50,7 @@ abstract class Repository implements RepositoryInterface
     {
         return $this->model->all();
     }
+
     /**
      * @param int $perPage
      * @param array $columns
@@ -42,6 +60,7 @@ abstract class Repository implements RepositoryInterface
     {
         // TODO: Implement paginate() method.
     }
+
     /**
      * @param array $data
      * @return mixed
@@ -50,6 +69,7 @@ abstract class Repository implements RepositoryInterface
     {
         // TODO: Implement create() method.
     }
+
     /**
      * @param array $data
      * @param $id
@@ -59,6 +79,7 @@ abstract class Repository implements RepositoryInterface
     {
         // TODO: Implement update() method.
     }
+
     /**
      * @param $id
      * @return mixed
@@ -67,6 +88,7 @@ abstract class Repository implements RepositoryInterface
     {
         // TODO: Implement delete() method.
     }
+
     /**
      * @param $id
      * @param array $columns
@@ -76,6 +98,7 @@ abstract class Repository implements RepositoryInterface
     {
         // TODO: Implement find() method.
     }
+
     /**
      * @param $field
      * @param $value

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="999cb167-db4f-4c45-a6d6-aa1c5ad056c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ContactEmailController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContactEmailController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Jobs/SendSubscriptionEmail.php" afterPath="$PROJECT_DIR$/app/Jobs/SendSubscriptionEmail.php" />
     </list>
     <ignored path="solid_laravel.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -121,8 +119,8 @@
       <file leaf-file-name="ContactEmailController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactEmailController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39310345">
-              <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.42068964">
+              <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -589,7 +587,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../adminlte-laravel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CSSThinkering" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="config.app&#9;null&#9;null&#10;app&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/resources/views/layouts/app.blade.php&#10;home&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/resources/views/home.blade.php&#10;bla&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/resources/views/layouts/landing.blade.php&#10;partials&#9;null&#9;null&#10;la&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/resources/views/layouts/landing.blade.php&#10;rou&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/app/Http/routes.php&#10;contact&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/app/Http/Controllers/ContactEmailController.php&#10;gulpfile&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/gulpfile.js&#10;routes&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/app/Http/routes.php&#10;6838ger&#9;null&#9;null&#10;invo&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/app/Http/Controllers/InvoiceController.php&#10;sid&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/resources/views/layouts/partials/sidebar.blade.php&#10;landin&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/resources/views/layouts/landing.blade.php&#10;config/app&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/config/app.php&#10;landing&#9;FILE&#9;file:///home/ggalia84/Code/solid_laravel/resources/views/layouts/landing.blade.php&#10;invoicecon&#9;null&#9;null&#10;route&#9;null&#9;null&#10;databases&#9;null&#9;null&#10;invoices&#9;null&#9;null" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -1080,8 +1078,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContactEmailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39310345">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.42068964">
+          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
           <folding />
         </state>
       </provider>

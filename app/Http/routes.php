@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', ['as' => 'welcome'], function () {
-    return view('welcome');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -26,15 +22,18 @@ Route::get('/', ['as' => 'welcome'], function () {
 |
 */
 
-
-App::bind(App\Repositories\RepositoryInterface::class, App\Repositories\InvoiceRepository::class);
-
+App::bind(App\Repositories\RepositoryInterface::class,
+    App\Repositories\InvoiceRepository::class);
 
 Route::group(['middleware' => ['web', 'pjax']], function () {
-    //
-    Route::get('/invoices',[
+
+    Route::get('/',['as' => 'welcome',
+        'uses'=>'WelcomeController@index']);
+
+    Route::get('/invoices', [
         'middleware' => 'auth',
-    'uses'=>'InvoiceController@index']);
+        'uses' => 'InvoicesController@index'
+    ]);
 
     Route::auth();
 
@@ -42,18 +41,26 @@ Route::group(['middleware' => ['web', 'pjax']], function () {
 
     Route::post('sendContactEmail', 'ContactEmailController@send');
 
-    Route::get('apartat1', function() {
-        return view('apartat1');
-
+    Route::get('apartat1', function(){
+       return view('apartat1');
     });
-    Route::get('apartat2', function() {
+
+    Route::get('apartat2', function(){
         return view('apartat2');
-
     });
-    Route::get('apartat3', function() {
+
+    Route::get('apartat3', function(){
         return view('apartat3');
-
     });
+
+    Route::get('/mypricingtable', function(){
+        return view('mypricingtable');
+    });
+
+    Route::get('/otherpricingtable', function(){
+        return view('otherpricingtable');
+    });
+
 });
 
-include 'test-routes.php';
+include "test-rourtes.php";
